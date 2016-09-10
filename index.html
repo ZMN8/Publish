@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>发布</title>
+    <link href="css/style.css" rel="stylesheet"/>
+    <script src="js/jquery.1.9.1.min.js"></script>
+</head>
+<body>
+<form class="box clearfix">
+    <div class="box_left">
+        <h3>发布图文</h3>
+        <div class="title">
+            <h4>标题<span>（可不填）</span></h4>
+            <div class="inputDiv"><input type="text" /></div>
+            <label class="file" for="file"></label>
+            <input type="file" id="file" style="display: none;"/>
+        </div>
+        <div class="pub_txt">
+            <h4>发表文字<span>（可不填）</span></h4>
+            <div class="tool">
+                <textarea id="editor" name="content" style="width:100%;height:300px;"></textarea>
+            </div>
+        </div>
+        <div class="pub_txt_btn clearfix">
+            <input type="reset" />
+            <input type="submit" />
+            <dl class="select">
+                <dt>
+                    <input type="text" id="txt" readonly="readonly" placeholder=""/>
+                    <i></i>
+                </dt>
+                <dd style="display: none" id="list">
+                    <a href="javascript:void(0)">商城</a>
+                    <a href="javascript:void(0)">二手</a>
+                    <a href="javascript:void(0)">活动</a>
+                </dd>
+            </dl>
+            <p><a href="#">先去了解...</a><span>同步到：</span></p>
+        </div>
+    </div>
+    <div class="box_right">
+        <ul class="check">
+            <li class="clearfix"><input type="checkbox"  id="check1"/><label class="checkbox"></label><label for="check1">文章置顶</label></li>
+            <li class="clearfix"><input type="checkbox"  id="check2"/><label class="checkbox"></label><label for="check2">仅自己可见</label></li>
+        </ul>
+        <h3>贴标签，赢人气</h3>
+        <div class="sign"><input type="text" placeholder="请输入文章标签" id="signInput"/></div>
+        <dl class="sign_box">
+            <dt class="clearfix">
+              <p><span>招聘</span><input type="hidden" value="招聘"><i class="X"></i></p>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </dt>
+            <dd class="clearfix">
+                <h4>热门标签推荐：</h4>
+                <p class="commendTag">学生</p>
+                <p class="commendTag">公务员</p>
+                <p class="commendTag">媒体人</p>
+                <p class="commendTag">金融</p>
+                <p class="p-blue commendTag">上班族</p>
+                <p class="commendTag">创业</p>
+                <p class="commendTag">法律</p>
+                <p class="commendTag">外出务工</p>
+                <p class="commendTag">农业</p>
+                <i class="bottom_bg"></i>
+            </dd>
+        </dl>
+
+    </div>
+</form>
+<script charset="utf-8" src="kindeditor-4.1.7/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="kindeditor-4.1.7/lang/zh_CN.js"></script>
+<script>
+
+    KindEditor.ready(function(K) {
+        var options = {
+            cssPath : 'css/style.css',
+            filterMode : true
+        };
+        var editor = K.create('textarea[name="content"]', {
+            items:[
+                'bold','underline', 'strikethrough', '|', 'justifyleft', 'justifycenter', 'justifyright',
+                'insertorderedlist', 'insertunorderedlist','|', 'emoticons', 'link',
+                'unlink', 'plainpaste',  'copy', 'fullscreen', 'removeformat', 'selectall'
+            ]
+        },options);
+    });
+</script>
+<script src="js/js.js"></script>
+</body>
+</html>
