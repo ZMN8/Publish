@@ -57,7 +57,6 @@ var json={
         });
         aNodes.click(function(){
             var val=this.textContent;
-
             $(inputNode).val(val);
         })
     },
